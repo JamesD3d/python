@@ -1,1 +1,545 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+ name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Reference</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1e1e1e;
+            color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff6f61;
+        }
+
+        .category {
+            background-color: #2e2e2e;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .category:hover {
+            background-color: #3e3e3e;
+        }
+
+        .category h2 {
+            margin: 0;
+            color: #61dafb;
+        }
+
+        .items {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+
+        .items.open {
+            max-height: 2000px;
+        }
+
+        .item {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #3e3e3e;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .item:hover {
+            background-color: #4e4e4e;
+        }
+
+        .item h3 {
+            margin: 0;
+            color: #ff6f61;
+        }
+
+        .example {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+
+        .example.open {
+            max-height: 800px;
+        }
+
+        .example p {
+            margin: 10px 0 0;
+            color: #f4f4f4;
+        }
+
+        .example pre {
+            background-color: #1e1e1e;
+            padding: 10px;
+            border-radius: 5px;
+            color: #f4f4f4;
+            overflow-x: auto;
+        }
+
+        .output {
+            margin-top: 5px;
+            padding: 5px;
+            background-color: #2a2a2a;
+            border-left: 3px solid #61dafb;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Python Reference</h1>
+
+        <!-- Data Types -->
+        <div class="category" onclick="toggleCategory(this)">
+            <h2>Data Types</h2>
+            <div class="items">
+                <div class="item" onclick="toggleExample(this, event)">
+                    <h3>Numbers</h3>
+                    <div class="example">
+                        <p>Numeric data types.</p>
+                        <pre><code>integer = 42
+float_num = 3.14
+complex_num = 2 + 3j
+
+print(type(integer))
+print(type(float_num))
+print(type(complex_num))</code></pre>
+                        <div class="output">
+                            &lt;class 'int'&gt;<br>
+                            &lt;class 'float'&gt;<br>
+                            &lt;class 'complex'&gt;
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item" onclick="toggleExample(this, event)">
+                    <h3>Strings</h3>
+                    <div class="example">
+                        <p>Text data.</p>
+                        <pre><code>text = "Hello, Python!"
+print(len(text))
+print(text
+.upper())
+print(text.lower())
+print(text[0:5])</code></pre>
+                        <div class="output">
+                            13<br>
+                            HELLO, PYTHON!<br>
+                            hello, python!<br>
+                            Hello
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item" onclick="toggleExample(this, event)">
+                    <h3>Lists</h3>
+                    <div class="example">
+                        <p>Ordered collections.</p>
+                        <pre><code>fruits = ['apple', 'banana', 'orange']
+print(fruits[0])
+fruits.append('grape')
+print(fruits)
+fruits.remove('banana')
+print(fruits)</code></pre>
+                        <div class="output">
+                            apple<br>
+                            ['apple', 'banana', 'orange', 'grape']<br>
+                            ['apple', 'orange', 'grape']
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Operators -->
+        <div class="category" onclick="toggleCategory(this)">
+            <h2>Operators</h2>
+            <div class="items">
+                <div class="item" onclick="toggleExample(this, event)">
+                    <h3>Arithmetic Operators</h3>
+                    <div class="example">
+                        <p>Basic mathematical operations.</p>
+                        <pre><code>a = 10
+b = 3
+print(a + b)  # Addition
+print(a - b)  # Subtraction
+print(a * b)  # Multiplication
+print(a / b)  # Division
+print(a % b)  # Modulus
+print(a ** b) # Exponentiation
+print(a // b) # Floor Division</code></pre>
+                        <div class="output">
+                            13<br>
+                            7<br>
+                            30<br>
+                            3.333...<br>
+                            1<br>
+                            1000<br>
+                            3
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item" onclick="toggleExample(this, event)">
+                    <h3>Comparison Operators</h3>
+                    <div class="example">
+                        <p>Compare values.</p>
+                        <pre><code>a = 10
+b = 20
+print
+(a == b)  # Equal
+print(a != b)  # Not Equal
+print(a > b)   # Greater Than
+print(a < b)   # Less Than
+print(a >= b)  # Greater Than or Equal
+print(a <= b)  # Less Than or Equal</code></pre>
+                        <div class="output">
+                            False<br>
+                            True<br>
+                            False<br>
+                            True<br>
+                            False<br>
+                            True
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Functions -->
+        <div class="category" onclick="toggleCategory(this)">
+            <h2>Functions</h2>
+            <div class="items">
+                <div class="item" onclick="toggleExample(this, event)">
+                    <h3>Basic Functions</h3>
+                    <div class="example">
+                        <p>Define and call functions.</p>
+                        <pre><code>def greet(name):
+    return f"Hello, {name}!"
+
+print(greet("Alice"))
+
+def add_numbers(a, b):
+    return a + b
+
+result = add_numbers(5, 3)
+print(result)</code></pre>
+                        <div class="output">
+                            Hello, Alice!<br>
+                            8
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item" onclick="toggleExample(this, event)">
+                    <h3>Lambda Functions</h3>
+                    <div class="example">
+                        <p>Anonymous functions.</p>
+                        <pre><code>square = lambda x: x**2
+numbers = [1, 2, 3, 4]
+squared = list(map(square, numbers))
+print(squared)</code></pre>
+                        <div class="output">
+                            [1, 4, 9, 16]
+                        </div>
+                    </div>
+                </div>
+                <div class="item" onclick="toggleExample(this, event)">
+                    <h3>Function Definition</h3>
+                    <div class="example">
+                        <p>Basic function definition and parameters.</p>
+                        <pre><code>def greet(name, greeting="Hello"):
+    return f"{greeting}, {name}!"
+
+print(greet("Alice"))
+print(greet("Bob", "Hi"))</code></pre>
+                        <div class="output">
+                            Output:<br>
+                            Hello, Alice!<br>
+                            Hi, Bob!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conditions -->
+        <div class="category" onclick="toggleCategory(this)">
+            <h2>Conditions</h2>
+            <div class="items">
+                <div class="item" onclick="toggleExample(this, event)">
+                    <h3>While Loop</h3>
+                    <div class="example">
+                        <p>Repeats a block of code while a condition is true.</p>
+                        <pre><code># Example
+counter = 0
+while counter < 5:
+    print(counter)
+    counter += 1</code></pre>
+                    </div>
+                </div>
+
+                <div class="item" onclick="toggleExample(this, event)">
+                    <h3>For Loop</h3>
+                    <div class="example">
+                        <p>Iterates over a sequence.</p>
+                        <pre><code># Example
+for i in range(5):
+    print(i)
+
+# Iterating over a list
+fruits = ['apple', 'banana', 'orange']
+for fruit in fruits:
+    print(fruit)</code></pre>
+                    </div>
+                </div>
+
+                <div class="item" onclick="toggleExample(this, event)">
+                    <h3>Loop Control</h3>
+                    <div class="example">
+                        <p>Control statements for loops.</p>
+                        <pre><code># Break example
+for i in range(5):
+    if i == 3:
+        break
+    print(i)
+
+# Continue example
+for i in range(5):
+    if i == 2:
+        continue
+    print(i)</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modules and Imports -->
+        <div class="category" onclick="toggleCategory(this)">
+            <h2>Modules and Imports</h2>
+            <div class="items">
+                <div class="item" onclick="toggleExample(this, event)">
+                    <h3>Basic Import</h3>
+                    <div class="example">
+                        <p>Different ways to import modules.</p>
+                        <pre><code># Standard import
+import math
+print(math.pi)
+
+# From import
+from math import sqrt
+print(sqrt(16))
+
+
+# Import with alias
+import numpy as np
+print(np.array([1, 2, 3]))</code></pre>
+                        <div class="output">
+                            Output:<br>
+                            3.141592653589793<br>
+                            4.0<br>
+                            [1 2 3]
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item" onclick="toggleExample(this, event)">
+                    <h3>Custom Modules</h3>
+                    <div class="example">
+                        <p>Creating and importing custom modules.</p>
+                        <pre><code># mymodule.py
+def greet(name):
+    return f"Hello, {name}!"
+
+# main.py
+from mymodule import greet
+print(greet("Alice"))</code></pre>
+                        <div class="output">
+                            Output:<br>
+                            Hello, Alice!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Object-Oriented Programming -->
+        <div class="category" onclick="toggleCategory(this)">
+            <h2>Object-Oriented Programming</h2>
+            <div class="items">
+                <div class="item" onclick="toggleExample(this, event)">
+                    <h3>Classes and Objects</h3>
+                    <div class="example">
+                        <p>Basic class definition and usage.</p>
+                        <pre><code>class Dog:
+    def __init__(self, name):
+        self.name = name
+    
+    def bark(self):
+        return f"{self.name} says woof!"
+
+dog = Dog("Rex")
+print(dog.bark())</code></pre>
+                        <div class="output">
+                            Output:<br>
+                            Rex says woof!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item" onclick="toggleExample(this, event)">
+                    <h3>Inheritance</h3>
+                    <div class="example">
+                        <p>Class inheritance and polymorphism.</p>
+                        <pre><code>class Animal:
+    def speak(self):
+        pass
+
+class Cat(Animal):
+    def speak(self):
+        return "Meow!"
+
+class Dog(Animal):
+    def speak(self):
+        return "Woof!"
+
+animals = [Cat(), Dog()]
+for animal in animals:
+    print(animal.speak())</code></pre>
+                        <div class="output">
+                            Output:<br>
+                            Meow!<br>
+                            Woof!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- File Handling -->
+        <div class="category" onclick="toggleCategory(this)">
+            <h2>File Handling</h2>
+            <div class="items">
+                <div class="item" onclick="toggleExample(this, event)">
+                    <h3>Reading Files</h3>
+                    <div class="example">
+                        <p>Read file contents.</p>
+                        <pre><code>with open('example.txt', 'r') as file:
+    content = file.read()
+    print(content)
+
+# Read lines
+with open('example.txt', 'r') as file:
+    lines = file.readlines()
+    for line in lines:
+        print(line.strip())</code></pre>
+                    </div>
+                </div>
+
+                <div class="item" onclick="toggleExample(this, event)">
+                    <h3>Writing Files</h3>
+                    <div class="example">
+                        <p>Write to files.</p>
+                        <pre><code>with open('output.txt', 'w') as file:
+    file.write('Hello, World!')
+
+# Append to file
+with open('output.txt', 'a') as file:
+    file.write('\nNew line')</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error Handling -->
+        <div class="category" onclick="toggleCategory(this)">
+            <h2>Error Handling</h2>
+            <div class="items">
+                <div class="item" onclick="toggleExample(this, event)">
+                    <h3>Try-Except</h3>
+                    <div class="example">
+                        <p>Handle errors gracefully.</p>
+                        <pre><code>try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("Cannot divide by zero!")
+except Exception as e:
+    print(f"Error: {e}")
+else:
+    print(result)
+finally:
+    print("Execution completed")</code></pre>
+                        <div class="output">
+                            Cannot divide by zero!<br>
+                            Execution completed
+                        </div>
+                    </div>
+                </div>
+                <div class="item" onclick="toggleExample(this, event)">
+                    <h3>Custom Exceptions</h3>
+                    <div class="example">
+                        <p>Creating custom exception classes.</p>
+                        <pre><code>class ValidationError(Exception):
+    pass
+
+def validate_age(age):
+    if age < 0:
+        raise ValidationError("Age cannot be negative")
+    return age
+
+try:
+    validate_age(-5)
+except ValidationError as e:
+    print(e)</code></pre>
+                        <div class="output">
+                            Output:<br>
+                            Age cannot be negative
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleCategory(category) {
+            const items = category.querySelector('.items');
+            items.classList.toggle('open');
+        }
+
+        function toggleExample(item, event) {
+            event.stopPropagation();
+            const example = item.querySelector('.example');
+            example.classList.toggle('open');
+
+            // Keep parent category open
+            const parentCategory = item.closest('.category');
+            const parentItems = parentCategory.querySelector('.items');
+            if (!parentItems.classList.contains('open')) {
+                parentItems.classList.add('open');
+            }
+        }
+    </script>
+</body>
+
+</html>
